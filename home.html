@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rays Coding-JQuery Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container mt-5 form_box">
+        <div class="row">
+            <div class="card p-0">
+                <div class="card-header bg-primary">
+                    <h3 class="text-center text-white">Rays Coding :- JQuery Form Validation(Image)</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h5>Upload Your Profile</h5>
+                        </div>
+                        <div class="col-lg-12">
+                            <form action="#" method="post" enctype="multipart/form-data">
+                                <div class="row check_id">
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="file" name="userprofilfe" id="user_profile">
+                                        <img src="" alt="" class="profile_preview">
+                                    </div>
+                                    <span id="userprofilfe_error" class="userprofilf_error"></span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <button type="submit" class="btn btn-primary mt-4" name="sub_btn"
+                                            id="sub_button">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 validationtext">
+                <h1>jQuery Image Validation</h1>
+            </div>
+        </div>
+    </div>
+    <!-- jquery  CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.2.slim.min.js"
+        integrity="sha256-E3P3OaTZH+HlEM7f1gdAT3lHAn4nWBZXuYe89DFg2d0=" crossorigin="anonymous"></script>
+    <!-- Validation Code -->
+    <script>
+        $(document).ready(function () {
+            $('#sub_button').on('click', function () {
+                var field_val = $('#user_profile').val();                
+                var extension_arr = ['jpeg', 'jpg', 'png'];
+                var img_exte = field_val.split('.').pop();
+                var serach_exte = extension_arr.includes(img_exte);
+                if (field_val == '')
+                {
+                    $('#userprofilfe_error').text('Please Upload Profile Image.');
+                    $('#userprofilfe_error').css('color', 'red');
+                    $('#user_profile').focus();
+                    return false;
+                }
+                else if (!serach_exte)
+                {
+                    $('#userprofilfe_error').text('Please  Upload Image In jpg, jpeg, png format.');
+                    $('#userprofilfe_error').css('color', 'red');
+                    $('#user_profile').focus();
+                    return false;
+                }
+            });
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    In this article, I will inform you about image validation in jquery. Image validation is a very important validation of form validation.
+
+Step of validation
+Create a form using Bootstrap or without Bootstrap
+Add the jQuery CDN link in the above "body" closing tag.
+Implement the validation code in the script tag below the jQuery CDN link.
+
+Let's see the form code
+
+As you can see in the above form code, I have implemented the bootstrap CDN link in the head tag and the jQuery CDN link above the body closing tag.
+
+Let's see the validation code
+
+
+Explanation of the validation code
+
+As you can see in the validation code, I have run the validation code on the button click. I used the value of the "ID" attribute,  jQuery "on" method and "click" event.
+
+For the validation, I have used two conditions.
+ 
+In the first condition, I checked the value of the input field. If the value is null, display an error message.
+
+In the second condition, I validated the extension of the image. For this validation, we need to get the value of the input field. 
+After getting the value of the input field I used the "split()" string function of the javascript language.
+By using the "split()" function I have split the string and got the image extension.
+
+After splitting the string I used the "pop()" array function of javascript.
+
+here I have used the "pop()" function because the "split" method returns an array of strings so I used the "pop()" function.
+
+After this, I created an array in which I have given the names of extensions. And I have used the "includes()" function.
+
+The "includes()" function is the array function of the javascript language. It returns the boolean value like "true" and "false".
+
+The extension of the image that was obtained is searched in the array. If the extension name is not found in that array then an error message will show. 
+
+
+you can see the above validation code, to get the image extension I have written the image extension code in a separate line and used one more than the variable. you can write this code in one line.
+
+
+
+ -->
